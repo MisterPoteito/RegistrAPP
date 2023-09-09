@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class='fondo'[fullscreen]="true">
+<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">RegistrAPP</ion-title>
@@ -12,8 +12,7 @@
   </ion-header>
 
   <div id="container">
-    <ion-input class="input" placeholder="Ingrese su nombre de usuario">Usuario</ion-input>
-    <ion-input type='password'class="input" id="Contraseña" placeholder="Ingrese su Contraseña">Contraseña</ion-input>
-    <ion-button class='boton' expand="block" fill="outline" (Click)="validarContrasenia()" routerLink="/home">Login</ion-button>
-    <ion-label class="label" >¿Olvidaste tu contraseña?</ion-label>
+    <ion-input class="input">Usuario</ion-input>
+    <ion-input type='password'class="input">Contraseña</ion-input>
+    <ion-button expand="block" fill="outline" routerLink="/home">Login</ion-button>
 <ion-content>
