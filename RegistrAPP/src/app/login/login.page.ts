@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  static getElementbyId(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor() { }
 
