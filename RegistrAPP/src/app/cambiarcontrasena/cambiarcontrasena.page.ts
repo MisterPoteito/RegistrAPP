@@ -42,7 +42,6 @@ export class CambiarcontrasenaPage implements OnInit {
       await alert.present();
       return;
     }
-    
+  
   }
-
 }

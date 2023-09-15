@@ -5,6 +5,7 @@ import {
   Validators,
   FormBuilder
 } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginPage implements OnInit {
 
   formularioLogin: FormGroup;
 
-  constructor(public fb: FormBuilder) { 
+  constructor(public fb: FormBuilder,
+    public alertController: AlertController) { 
 
     this.formularioLogin = this.fb.group({
       'usuario': new FormControl("",Validators.required),
@@ -27,13 +29,28 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  ingresar(){
-    var usuario = this.formularioLogin.controls['usuario'].value;
-    var password = this.formularioLogin.controls['password'].value;
+  async guardar(){
+    var f = this.formularioLogin.value;
+
+    if (this.formularioLogin.invalid) {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Error',
+        message: 'Ingrese los datos correctamente',
+        buttons: ['Aceptar']
+      });
+
+      await alert.present();
+      return;
+    }
     
-    
-    console.log(this.formularioLogin.value);
-    
+    var usuario = {
+      usuario: f.usuario,
+      password: f.password
+    }
+
+    localStorage.setItem("usuario",JSON.stringify(usuario));
+
   }
 
 }
