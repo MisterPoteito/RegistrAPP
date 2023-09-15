@@ -6,6 +6,7 @@ import {
   FormBuilder
 } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +16,11 @@ import { AlertController } from '@ionic/angular';
 export class LoginPage implements OnInit {
 
   formularioLogin: FormGroup;
+  router: any;
 
   constructor(public fb: FormBuilder,
-    public alertController: AlertController) { 
+    public alertController: AlertController,
+    public route: Router) { 
 
     this.formularioLogin = this.fb.group({
       'usuario': new FormControl("",Validators.required),
@@ -50,6 +53,7 @@ export class LoginPage implements OnInit {
     }
 
     localStorage.setItem("usuario",JSON.stringify(usuario));
+    this.route.navigate(['/home']);
 
   }
 
