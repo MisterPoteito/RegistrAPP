@@ -6,6 +6,7 @@ import {
   FormBuilder
 } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cambiarcontrasena',
@@ -17,7 +18,8 @@ export class CambiarcontrasenaPage implements OnInit {
   formularioCambiarContrasena: FormGroup;
 
   constructor(public fb: FormBuilder,
-    public alertController: AlertController) { 
+    public alertController: AlertController,
+    public route: Router) { 
 
   this.formularioCambiarContrasena = this.fb.group({
     'contraseña': new FormControl("",Validators.required),
@@ -35,13 +37,13 @@ export class CambiarcontrasenaPage implements OnInit {
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: 'Error',
-        message: 'Ingrese los datos correctamente',
+        message: 'La contraseña no puede quedar vacía.',
         buttons: ['Aceptar']
       });
 
       await alert.present();
       return;
     }
-  
+    this.route.navigate(['/home']);
   }
 }
