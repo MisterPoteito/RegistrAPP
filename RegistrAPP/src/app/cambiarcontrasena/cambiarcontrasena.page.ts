@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder
+} from '@angular/forms';
 
 @Component({
   selector: 'app-cambiarcontrasena',
@@ -7,7 +13,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CambiarcontrasenaPage implements OnInit {
 
-  constructor() { }
+  formularioCambiarContrasena: FormGroup;
+
+  constructor(public fb: FormBuilder) { 
+
+  this.formularioCambiarContrasena = this.fb.group({
+    'contraseña': new FormControl("",Validators.required),
+    'confirmar': new FormControl("",Validators.required)
+  })
+}
 
   ngOnInit() {
   }
