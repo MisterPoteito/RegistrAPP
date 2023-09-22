@@ -2,7 +2,64 @@ $colorboton1 : #1A1A1A;
 $colorboton2 : #FFB800;
 $colorfondo : #666666;
 
+.title-animation {
+    animation: slideCenter 3s ease forwards;
+  }
+  
+  @keyframes slideCenter {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(30%);
+    }
+  }
 
+.card-animation {
+    animation: slideCenter 3s ease forwards;
+  }
+  
+  @keyframes slideCenter {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+ion-label{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+ion-card{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    padding: 10px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-shadow: 0px 0px 10px #000000;
+}
+
+ion-card-header{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
 
 .input{
     text-align: left;

@@ -12,18 +12,12 @@
       <ion-card-title>¿Quieres cambiar tu contraseña?</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <form [formGroup]="formularioCambiarContrasena">
         <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input formControlName="contraseña" type="password"></ion-input>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input ></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label position="floating">Confirmar Contraseña</ion-label>
-          <ion-input formControlName="confirmar" type="password"></ion-input>
-        </ion-item>
-      </form>
       <br>
-      <ion-button (Click)="guardar()" [routerLink]="['/login']">
+      <ion-button [routerLink]="['/login']">
         Recuperar
       </ion-button>
     </ion-card-content>
