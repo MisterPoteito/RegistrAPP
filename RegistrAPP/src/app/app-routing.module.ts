@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'cambiarcontrasena',
     loadChildren: () => import('./cambiarcontrasena/cambiarcontrasena.module').then( m => m.CambiarcontrasenaPageModule)
   },
+  {
+    path: 'homeprofesor',
+    loadChildren: () => import('./homeprofesor/homeprofesor.module').then( m => m.HomeprofesorPageModule)
+  },
 ];
 
 @NgModule({
